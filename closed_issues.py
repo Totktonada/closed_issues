@@ -7,7 +7,7 @@ import requests
 
 parser = argparse.ArgumentParser(description='Show issues closed on a week')
 parser.add_argument('org', type=str, help='an organization name')
-parser.add_argument('week', type=str, help='a number of week')
+parser.add_argument('week', type=int, help='a number of week')
 args = parser.parse_args()
 org = args.org
 week = args.week
@@ -21,6 +21,7 @@ with open(token_file, 'r') as f:
     token = f.read().strip()
 
 since = datetime.strptime('2019-W{}-1'.format(week), "%G-W%V-%w")
+until = datetime.strptime('2019-W{}-1'.format(week + 1), "%G-W%V-%w")
 
 session = requests.Session()
 headers = {
@@ -48,7 +49,7 @@ issues_per_repo = {}
 
 for issue in data:
     closed_at = datetime.strptime(issue['closed_at'], '%Y-%m-%dT%H:%M:%SZ')
-    if closed_at < since:
+    if closed_at < since or closed_at >= until:
         continue
     number = '#' + str(issue['number'])
     if 'pull_request' in issue:

@@ -21,13 +21,8 @@ Run like so:
 The example of output:
 
 ```
-rocks: [PR #63] Add metrics-0.1.0-1
-rocks: [PR #62] Add vshard 0.1.9
-metrics: [PR #5] Add rockspec for release 0.1.0-1 version
 metrics: [PR #2] RPM Spec
 metrics: [PR #4] add collectors from stats
-tarantool-java: [PR #168] add badges for travis and maven central
-tarantool-java: [#86, JDBC MVP] jdbc: Support resultSetConcurrency parameter in Connection methods
 tarantool-c: [PR #129] travis-ci: update distros and repos & fix CentOS 6 build
 tarantool: [#4174, 1.10.4] Add Ubuntu 19.04 Disco Dingo into CI
 tarantool: [#4103, 2.2.0] sql: wrong type of addition string with integer
@@ -44,6 +39,7 @@ tarantool: [#3582, 1.10.4] primary index alter don't work on already unique fiel
 tarantool: [#4136] http.client: wrong error message
 tarantool: [#4041, 1.10.4] Invalid index on update empty box.tuple
 tarantool: [#3879, 2.2.0] sql: modify the signature of TRIM()
+tarantool-java: [#86, JDBC MVP] jdbc: Support resultSetConcurrency parameter in Connection methods
 ldecnumber: [#3] NaN rounding breaks further rounding calls
 vshard: [#178, 0.2] Vshard storage reload nullifies bucket_ref_new
 doc: [#760] Document new box.stat.net fields
