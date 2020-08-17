@@ -20,8 +20,9 @@ if not os.path.isfile(token_file):
 with open(token_file, 'r') as f:
     token = f.read().strip()
 
-since = datetime.strptime('2019-W{}-1'.format(week), "%G-W%V-%w")
-until = datetime.strptime('2019-W{}-1'.format(week + 1), "%G-W%V-%w")
+year = datetime.now().strftime('%Y')
+since = datetime.strptime('{}-W{}-1'.format(year, week), "%G-W%V-%w")
+until = datetime.strptime('{}-W{}-1'.format(year, week + 1), "%G-W%V-%w")
 
 session = requests.Session()
 headers = {
